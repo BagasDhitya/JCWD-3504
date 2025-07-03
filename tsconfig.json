@@ -9,6 +9,7 @@
   },
   "include": [
     "programming-fundamental-day-01/*",
-    "programming-fundamental-day-02/*"
+    "programming-fundamental-day-02/*",
+    "programming-fundamental-day-03/*"
   ]
 }
