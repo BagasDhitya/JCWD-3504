@@ -1,0 +1,24 @@
+{
+    "data" : [
+        {
+            "id" : 1,
+            "name" : "John Doe",
+            "class" : "JCWD-3504"
+        },
+        {
+            "id" : 2,
+            "name" : "Jane Doe",
+            "class" : "JCWD-3504"
+        },
+        {
+            "id" : 3,
+            "name" : "Bob",
+            "class" : "JCWD-3504"
+        },
+        {
+            "id" : 4,
+            "name" : "Charlie",
+            "class" : "JCWD-3504"
+        }
+    ]
+}
