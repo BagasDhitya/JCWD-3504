@@ -1,0 +1,121 @@
+/* Reset & Base */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat';
+    background-color: #f2ebe3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 340px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Image */
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Content */
+.card-content {
+    padding: 20px;
+}
+
+.product-type {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #6c7289;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.product-title {
+    font-family: 'Fraunces';
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1c232b;
+    margin-bottom: 14px;
+    line-height: 1.2;
+}
+
+.product-description {
+    font-size: 0.85rem;
+    color: #6c7289;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Pricing */
+.price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.new-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3c8067
+}
+
+.old-price {
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: #6c7289
+}
+
+/* Button */
+.add-to-cart {
+    width: 100%;
+    background-color: #3c8067;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    width: 100%;
+    background-color: #1c3d31;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart img {
+    width: 18px;
+    height: 18px;
+}
