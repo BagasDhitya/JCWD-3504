@@ -9,8 +9,8 @@
     "resolveJsonModule": true
   },
   "include": [
-    "programming-fundamental-day-01/*",
-    "programming-fundamental-day-02/*",
-    "programming-fundamental-day-03/*"
+    "Modul-1/programming-fundamental-day-01/*",
+    "Modul-1/programming-fundamental-day-02/*",
+    "Modul-1/programming-fundamental-day-03/*"
   ]
 }
