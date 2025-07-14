@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCWD3504 - Basic HTML</title>
+</head>
+
+<body>
+    <!-- Heading tags : untuk menulis berbagai macam jenis tag judul -->
+    <div>
+        <h3> --- HEADING TAGS --- </h3>
+        <h1>Judul Utama Website</h1>
+        <h2>Subjudul Halaman</h2>
+        <h3>Bagian Konten</h3>
+        <h4>Subbagian</h4>
+        <h5>Catatan Kecil</h5>
+        <h6>Keterangan Tambahan</h6>
+    </div>
+
+    <div>
+        <h3> --- PARAGRAPH, COMMENT LINE, BREAK --- </h3>
+        <p>Ini adalah paragraf pertama.</p>
+        <p>Ini adalah paragraf kedua</p>
+        <!-- <p>Ini adalah komentar HTML</p> -->
+        <p>Baris pertama. <br>Baris kedua setelah break.</p>
+    </div>
+
+    <!-- div : untuk grouping elemen-->
+    <!-- Text formatting : untuk memberikan efek terhadap text tertentu -->
+    <div>
+        <h3> --- TEXT FORMATTING --- </h3>
+        <p><b>Teks tebal</b> dan <i>Teks miring</i></p>
+        <p><u>Teks bergaris bawah atau underline</u></p>
+        <p><strong>Penting!</strong> Harap dibaca</p>
+        <p><em>Penekanan secara halus</em></p>
+        <p><mark>Tulisan ini sudah ditandai.</mark></p>
+    </div>
+
+    <!-- UNORDERED LIST : list yang tidak ada urutannya -->
+    <div>
+        <h3> --- UNORDERED LIST --- </h3>
+        <h4>Daftar belanja (default UL) : </h4>
+        <ul>
+            <li>Beras</li>
+            <li>Minyak Goreng</li>
+            <li>Gula</li>
+            <li>Santan</li>
+        </ul>
+        <h4>Daftar belanja (circle UL) : </h4>
+        <ul>
+            <li style="list-style-type: circle;">Beras</li>
+            <li style="list-style-type: circle;">Minyak Goreng</li>
+            <li style="list-style-type: circle;">Gula</li>
+            <li style="list-style-type: circle;">Santan</li>
+        </ul>
+        <h4>Daftar belanja (square UL) : </h4>
+        <ul>
+            <li style="list-style-type: square;">Beras</li>
+            <li style="list-style-type: square;">Minyak Goreng</li>
+            <li style="list-style-type: square;">Gula</li>
+            <li style="list-style-type: square;">Santan</li>
+        </ul>
+        <h4>Daftar belanja (without bullets point) : </h4>
+        <ul>
+            <li style="list-style-type: none;">Beras</li>
+            <li style="list-style-type: none;">Minyak Goreng</li>
+            <li style="list-style-type: none;">Gula</li>
+            <li style="list-style-type: none;">Santan</li>
+        </ul>
+    </div>
+
+    <!-- ORDERED LIST : list yang terurut -->
+    <div>
+        <h3> --- ORDERED LIST --- </h3>
+        <h4>Ranking kelas (default OL) :</h4>
+        <ol>
+            <li>Andi</li>
+            <li>Budi</li>
+            <li>Caca</li>
+        </ol>
+        <h4>Ranking kelas (uppercase letter OL) :</h4>
+        <ol>
+            <li type="A">Andi</li>
+            <li type="A">Budi</li>
+            <li type="A">Caca</li>
+        </ol>
+        <h4>Ranking kelas (lowercase letter OL) :</h4>
+        <ol>
+            <li type="a">Andi</li>
+            <li type="a">Budi</li>
+            <li type="a">Caca</li>
+        </ol>
+        <h4>Ranking kelas (lowercase romans OL) :</h4>
+        <ol>
+            <li type="i">Andi</li>
+            <li type="i">Budi</lis>
+            <li type="i">Caca</li>
+        </ol>
+        <h4>Ranking kelas (uppercase romans OL) :</h4>
+        <ol>
+            <li type="I">Andi</li>
+            <li type="I">Budi</li>
+            <li type="I">Caca</li>
+        </ol>
+    </div>
+
+    <!-- HTML TABLE -->
+    <div>
+        <h3> --- COFFE SHOP PRICE --- </h3>
+        <table border="1">
+            <tr>
+                <th>Menu</th>
+                <th>Harga</th>
+            </tr>
+            <tr>
+                <td>Matcha</td>
+                <td>Rp35.000</td>
+                <td><mark>New Menu!</mark></td>
+            </tr>
+            <tr>
+                <td>Caramel Macchiato</td>
+                <td>Rp40.000</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- COLUMN SPAN -->
+    <div>
+        <h3> --- COLUMN SPAN --- </h3>
+        <table border="1">
+            <tr>
+                <th>Hari</th>
+                <th colspan="2">Kegiatan</th>
+            </tr>
+            <tr>
+                <td>Senin</td>
+                <td>Belajar frontend fundamental</td>
+                <td>Exercise</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td>Belajar css lanjutan</td>
+                <td>Exercise</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ROW SPAN -->
+    <div>
+        <h3> --- ROW SPAN --- </h3>
+        <table border="1">
+            <tr>
+                <th>Hari</th>
+                <th>Kegiatan</th>
+            </tr>
+            <tr>
+                <td>Senin</td>
+                <td rowspan="2">Belajar frontend fundamental</td>
+                <td rowspan="3">Exercise</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td rowspan="2">Belajar css lanjutan</td>
+                <td>Exercise</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ANCHOR TAGS -->
+    <div>
+        <h3> --- ANCHOR TAGS --- </h3>
+        <p><a href="https://purwadhika.com/">Go to Website Purwadhika</a></p>
+        <p><a href="https://purwadhika.com" target="_blank">Go to Website Purwadhika (open new tab)</a></p>
+    </div>
+
+    <!-- IMAGE TAGS & FIGURE & CAPTION TAGS -->
+    <div>
+        <h3> --- IMAGE TAGS & CAPTION TAGS --- </h3>
+        <figure>
+            <img src="https://i.pinimg.com/736x/9b/4d/6c/9b4d6ca347b08fcf6709885821049160.jpg" alt="tung_tung_sahur"
+                width="250" height="250">
+            <figcaption>Tung tung sahur, sebuah anomali yang muncul ketika sahur</figcaption>
+        </figure>
+        <figure>
+            <img src="https://i.pinimg.com/1200x/95/7d/26/957d26768f69479753eeedf8268eadc5.jpg" alt="balerina_capuccina"
+                width="250" height="250">
+            <figcaption>Balerina capuccina, secangkir kopi yang bisa menari</figcaption>
+        </figure>
+    </div>
+</body>
+
+</html>

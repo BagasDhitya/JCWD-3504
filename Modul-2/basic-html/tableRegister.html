@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi JCWD - Purwadhika</title>
+</head>
+
+<body>
+    <h1>Formulir Registrasi JCWD - Purwadhika</h1>
+    <form method="get">
+        <!-- Nama Lengkap -->
+        <label for="name">Nama Lengkap : </label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email -->
+        <label for="email">Email : </label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Pilih Branch -->
+        <label for="kota">Pilih Kota : </label>
+        <select name="kota" id="kota">
+            <option value="jakarta">Jakarta</option>
+            <option value="bsd">BSD</option>
+            <option value="bandung">Bandung</option>
+        </select><br><br>
+
+        <!-- Jenis Kelamin -->
+        <label for="gender">Jenis Kelamin : </label>
+
+        <input type="radio" id="male" name="gender" value="Laki laki" required>
+        <label for="male">Laki laki</label>
+        <input type="radio" id="female" name="gender" value="Perempuan" required>
+        <label for="female">Perempuan</label><br><br>
+
+        <!-- Upload KTP / Identitas -->
+        <label for="ktp">Upload KTP : </label>
+        <input type="file" id="ktp" name="ktp" accept=".jpg,.jpeg,.png,.pdf"><br><br>
+
+        <!-- Password -->
+        <label for="password">Password : </label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <!-- Tombol Submit -->
+        <button type="submit">Kirim Registrasi</button>
+    </form>
+</body>
+
+</html>
