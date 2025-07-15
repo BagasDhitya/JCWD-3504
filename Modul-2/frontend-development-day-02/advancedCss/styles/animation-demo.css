@@ -1,0 +1,56 @@
+body {
+    padding: 30px;
+    background: #f0f0f0;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.demo-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 20px auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* --- 2D TRANSFORM: TRANSLATE --- */
+.translate-2d {
+    transition: transform 0.5s ease;
+}
+
+.translate-2d:hover {
+    transform: translate(50px, 20px);
+}
+
+/* --- 2D TRANSFORM: ROTATE --- */
+.rotate-2d {
+    transition: transform 0.5s ease;
+}
+
+.rotate-2d:hover {
+    transform: rotate(360deg);
+}
+
+/* --- 3D TRANSFORM: TRANSLATE X --- */
+.translate-3d {
+    perspective: 600px
+}
+
+.translate-3d .box {
+    transition: transform 0.6s;
+}
+
+.translate-3d:hover .box {
+    transform: translateX(100px) rotateY(50deg)
+}

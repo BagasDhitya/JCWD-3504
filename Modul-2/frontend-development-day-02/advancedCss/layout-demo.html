@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/layout-demo.css">
+    <title>Demo Position, Media Queries, Grid</title>
+</head>
+
+<body>
+    <!-- Position -->
+    <section>
+        <h2>1. CSS Position</h2>
+        <div class="position-container">
+            <div class="static-box">Static (default)</div>
+            <div class="relative-box">Relative</div>
+            <div class="absolute-box">Absolute (relative to container)</div>
+            <div class="sticky-box">Sticky (melekat saat scroll)</div>
+            <div class="fixed-box">Fixed (selalu di pojok kanan atas)</div>
+        </div>
+    </section>
+
+    <!-- Media Queries -->
+    <section>
+        <h2>2. Media Queries (Responsive Breakpoints)</h2>
+        <div class="responsive-box">
+            Coba resize layar untuk melihat perubahan warna
+        </div>
+        <ul>
+            <li><strong>Smartphone:</strong> max-width: 767px</li>
+            <li><strong>Tablet:</strong> min-width: 768px & max-width: 1024px</li>
+            <li><strong>Desktop:</strong> min-width: 1025px</li>
+        </ul>
+    </section>
+
+    <!--- Grid -->
+    <section>
+        <h2>3. CSS Grid</h2>
+
+        <h3>Grid : 3 Kolom</h3>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+
+        <h3>Grid Template Rows</h3>
+        <div class="grid-rows">
+            <div class="grid-item">Row 1 (100px)</div>
+            <div class="grid-item">Row 2 (50px)</div>
+            <div class="grid-item">Row 3 (150px)</div>
+        </div>
+
+        <h3>Grid Template Columns</h3>
+        <div class="grid-cols">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+
+        <h3>Grid Auto Rows</h3>
+        <div class="grid-auto-rows">
+            <div class="grid-item">Auto Row 1</div>
+            <div class="grid-item">Auto Row 2</div>
+            <div class="grid-item">Auto Row 3</div>
+        </div>
+
+        <h3>Grid Justify Items</h3>
+        <h4>a. justify-items: start</h4>
+
+        <div class="justify-demo justify-start">
+            <div class="grid-item">Start</div>
+            <div class="grid-item">Start</div>
+            <div class="grid-item">Start</div>
+        </div>
+
+        <h4>b. justify-items: center</h4>
+        <div class="justify-demo justify-center">
+            <div class="grid-item">Center</div>
+            <div class="grid-item">Center</div>
+            <div class="grid-item">Center</div>
+        </div>
+
+        <h4>c. justify-items: end</h4>
+        <div class="justify-demo justify-end">
+            <div class="grid-item">End</div>
+            <div class="grid-item">End</div>
+            <div class="grid-item">End</div>
+        </div>
+
+        <h4>d. justify-items: stretch</h4>
+        <div class="justify-demo justify-end">
+            <div class="grid-item">Stretch</div>
+            <div class="grid-item">Stretch</div>
+            <div class="grid-item">Stretch</div>
+        </div>
+
+    </section>
+
+    <!-- Flexbox -->
+    <section>
+        <h2>4. CSS Flexbox</h2>
+
+        <h3>a. display : flex (dasar flex container)</h3>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h3>b. flex direction</h3>
+        <h4> --- row (default) </h4>
+        <div class="flex-container row">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h4> --- column </h4>
+        <div class="flex-container col">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h4> --- row reversed</h4>
+        <div class="flex-container row-reversed">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h4> --- column reversed </h4>
+        <div class="flex-container col-reversed">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h3>c. flex wrap</h3>
+        <h4> --- no wrap (default)</h4>
+        <div class="flex-container no-wrap" style="width: 100px;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h4> --- wrap </h4>
+        <div class="flex-container wrap" style="width: 100px;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h4> --- wrap reversed</h4>
+        <div class="flex-container wrap-reversed" style="width: 100px;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h3>d. flex basis</h3>
+        <div class="basis-container">
+            <div class="basis-item basis-100">100px</div>
+            <div class="basis-item basis-200">200px</div>
+            <div class="basis-item basis-300">300px</div>
+        </div>
+
+    </section>
+</body>
+
+</html>

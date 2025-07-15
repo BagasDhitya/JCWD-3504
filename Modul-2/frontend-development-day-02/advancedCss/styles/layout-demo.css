@@ -1,0 +1,269 @@
+body {
+    margin: 30px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* --- POSITION --- */
+
+.position-container {
+    position: relative;
+    height: 300px;
+    border: 2px dashed #aaa;
+    margin-top: 20px;
+}
+
+.static-box {
+    position: static;
+    background-color: #ccc;
+    padding: 10px;
+}
+
+.relative-box {
+    position: relative;
+    left: 30px;
+    top: 10px;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: pink;
+    padding: 10px;
+}
+
+.fixed-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: orange;
+    padding: 10px;
+}
+
+.sticky-box {
+    position: sticky;
+    top: 10px;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+/* --- GRID --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #e2e2e2;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-rows {
+    display: grid;
+    grid-template-rows: 100px 50px 150px;
+    grid-gap: 10px;
+}
+
+.grid-cols {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px
+}
+
+.grid-auto-rows {
+    display: grid;
+    grid-auto-rows: 80px;
+    gap: 10px;
+}
+
+/* --- JUSTIFY ITEMS --- */
+.justify-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    background-color: white;
+    padding: 20px;
+    border: 1px dashed black
+}
+
+.justify-start {
+    justify-items: start;
+}
+
+.justify-center {
+    justify-items: center
+}
+
+.justify-end {
+    justify-items: end
+}
+
+.justify-stretch {
+    justify-items: stretch;
+}
+
+/* --- FLEXBOX --- */
+.flex-container {
+    display: flex;
+    gap: 10px;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+.flex-item {
+    background-color: #ffffff;
+    border: 2px solid #999;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reversed {
+    flex-direction: row-reverse;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.col-reversed {
+    flex-direction: column-reverse;
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.wrap-reversed {
+    flex-wrap: wrap-reverse;
+}
+
+/* --- FLEX BASIS --- */
+.basis-container {
+    display: flex;
+    gap: 10px;
+    background-color: #e7f3ff;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.basis-item {
+    background-color: #d6eaff;
+    border: 2px solid #4b94c1;
+    padding: 20px;
+    text-align: center;
+}
+
+.basis-100 {
+    flex-basis: 100px;
+}
+
+.basis-200 {
+    flex-basis: 200px;
+}
+
+.basis-300 {
+    flex-basis: 300px;
+}
+
+
+
+/* --- MEDIA QUERIES --- */
+
+.responsive-box {
+    background-color: #efefef;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #aaa
+}
+
+/* Desktop : width >= 1025px */
+@media (min-width: 1025px) {
+    .responsive-box {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .grid-item {
+        background-color: #e2e2e2;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* Tablet : width 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .responsive-box {
+        background-color: #FFF3CD;
+        color: #856404;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .grid-item {
+        background-color: #e2e2e2;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* Smartphone - width < 768px */
+@media(max-width: 767px) {
+    .responsive-box {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .grid-item {
+        background-color: #e2e2e2;
+        padding: 20px;
+        text-align: center;
+    }
+}
