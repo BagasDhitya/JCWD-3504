@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Input with DOM</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Say Hello</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="sayHello()">Greet Me</button>
+        <div id="greeting"></div>
+    </div>
+    <script>
+        function sayHello() {
+            let nameInput = document.getElementById("nameInput");
+            let name = nameInput.value.trim();
+            if (name === "") {
+                alert("Please enter your name!");
+            } else {
+                alert(`Hello, ${name}`);
+            }
+        }
+    </script>
+</body>
+
+
+</html>

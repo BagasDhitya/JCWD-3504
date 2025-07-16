@@ -1,0 +1,10 @@
+{
+    "name" : "Bagas Dhitya Taufiqqi",
+    "role" : "Fullstack Web Developer",
+    "description" : "I'm a passionate fullstack developer and educator with 5 years of experience in building scalable web applications.",
+    "contact" : {
+        "phone" : "+62 812-3456-7890",
+        "email" : "bagas.taufiqqi@mail.com",
+        "location" : "Jakarta, Indonesia"
+    }
+}

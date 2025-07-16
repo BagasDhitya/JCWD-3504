@@ -1,0 +1,50 @@
+.services {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #666;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    text-align: left;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}

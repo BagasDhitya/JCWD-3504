@@ -1,0 +1,22 @@
+{
+    "title" : "Web Development Expertise",
+    "description" : "Here are some of the key services I offer in fullstack web development, DevOps, and architecture design",
+    "categories" : [
+        {
+            "name" : "Frontend",
+            "items": ["Next.js", "HTML/CSS", "TypeScript"]
+        },
+         {
+            "name" : "Backend",
+            "items": ["Node.js", "Express.js", "PostgreSQL", "Prisma ORM"]
+        },
+         {
+            "name" : "DevOps & Cloud Platforms",
+            "items": ["Google Cloud", "Amazon Web Services", "Docker", "Kubernetes"]
+        },
+        {
+            "name" : "Mentoring",
+            "items" : ["Curriculum Design", "Teaching Web Dev", "Project Mentoring"]
+        }
+    ]
+}
