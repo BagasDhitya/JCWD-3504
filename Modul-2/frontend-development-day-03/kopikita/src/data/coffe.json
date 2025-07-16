@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Black",
+    "description": "Strong and bold Indonesian black coffee.",
+    "price": 15000,
+    "image": "https://i.pinimg.com/1200x/7f/98/92/7f98920e7c427ed9bd016003ddf27c57.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Aren Latte",
+    "description": "Espresso with milk and palm sugar.",
+    "price": 18000,
+    "image": "https://i.pinimg.com/736x/8f/30/c6/8f30c65f593f68e0e270bb01c7903721.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kopi Luwak",
+    "description": "Smooth and exclusive wild civet coffee.",
+    "price": 50000,
+    "image": "https://i.pinimg.com/736x/a7/0a/98/a70a98266ef8c8e8ad6d92fb4df61c10.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Gayo Brew",
+    "description": "Organic coffee from Aceh's highlands.",
+    "price": 20000,
+    "image": "https://i.pinimg.com/736x/33/17/10/33171068a3f34787c12300512e89a370.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Toraja Roast",
+    "description": "Earthy and rich coffee from Toraja.",
+    "price": 22000,
+    "image": "https://i.pinimg.com/1200x/d0/d1/f3/d0d1f389cbf0a46ca3100e6e79d0a8c5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Kintamani Citrus",
+    "description": "Fruity and citrusy blend from Bali.",
+    "price": 21000,
+    "image": "https://i.pinimg.com/736x/2d/be/6b/2dbe6bbcd1c26cfd026824aa9ab5bdcb.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Cold Brew",
+    "description": "Chilled brew for refreshing experience.",
+    "price": 19000,
+    "image": "https://i.pinimg.com/736x/dc/73/64/dc7364f40212f9585dfc5ce5bf09e0c2.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Affogato",
+    "description": "Espresso over vanilla ice cream.",
+    "price": 25000,
+    "image": "https://i.pinimg.com/736x/c1/9b/38/c19b3832eed106613c3946777c3f29ce.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Nusantara Cappuccino",
+    "description": "Creamy cappuccino with local flavor.",
+    "price": 23000,
+    "image": "https://i.pinimg.com/1200x/33/44/2e/33442e58a74503c7cef4fc437a4ebc8e.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Pandan Latte",
+    "description": "Latte infused with pandan aroma.",
+    "price": 24000,
+    "image": "https://i.pinimg.com/1200x/db/d8/e7/dbd8e7504781534348258ce93bf21457.jpg"
+  }
+]
