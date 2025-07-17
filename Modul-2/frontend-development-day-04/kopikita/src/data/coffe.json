@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso",
+    "description": "Kopi hitam pekat dengan rasa kuat dan crema tebal",
+    "price": 25000,
+    "image": "https://i.pinimg.com/736x/4c/28/e2/4c28e2420bf38c50120dba0cbaf42e8d.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Cappuccino",
+    "description": "Perpaduan espresso, susu steamed, dan busa susu lembut",
+    "price": 30000,
+    "image": "https://i.pinimg.com/1200x/33/44/2e/33442e58a74503c7cef4fc437a4ebc8e.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Latte",
+    "description": "Espresso dengan lebih banyak susu steamed dan lapisan busa tipis",
+    "price": 32000,
+    "image": "https://i.pinimg.com/736x/6a/86/c3/6a86c387495a30851e5843a582c7b6f2.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Americano",
+    "description": "Espresso yang diencerkan dengan air panas, rasa lebih ringan",
+    "price": 22000,
+    "image": "https://i.pinimg.com/1200x/bc/0c/ff/bc0cffc8b21c24b4b571e98b9ab5da12.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mocha",
+    "description": "Espresso dengan coklat dan susu steamed, ditambah whipped cream",
+    "price": 35000,
+    "image": "https://i.pinimg.com/736x/66/bd/32/66bd320679db4217c5c20785a961d1bc.jpg"
+  }
+]
