@@ -1,17 +1,33 @@
 'use client'
 import { useEffect, useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import { useOnlineStore } from "@/utils/onlineStore"
+import { useAuthStore } from "@/utils/authStore"
+import { getProfile, removeProfile } from "@/helpers/profile.config"
 
 export default function Navbar() {
-
+    // Hooks and state
+    const pathname = usePathname()
+    const router = useRouter()
     const { isOnline, checkOnlineStatus } = useOnlineStore()
+    const { email } = useAuthStore()
+    const emailFromCookie = getProfile()
     const [isActive, setIsActive] = useState<boolean>(true)
-    const IDLE_TIMEOUT = 5000 // 5 detik untuk idle
 
+    // Constants
+    const IDLE_TIMEOUT = 5000 // 5 seconds for idle
+    const isLogin = pathname === '/auth/login'
 
+    // Handlers
+    function logout() {
+        removeProfile()
+        alert('You have successfully logged out')
+        router.push('/auth/login')
+    }
 
+    // Effects
     useEffect(() => {
-        // cek status online hanya sekali saat komponen mounting
+        // Check online status only once when component mounts
         checkOnlineStatus()
 
         let idleTimer: NodeJS.Timeout;
@@ -24,36 +40,46 @@ export default function Navbar() {
             }, IDLE_TIMEOUT)
         }
 
-        // event listeners untuk aktivitas pengguna
-        window.addEventListener('mousemove', handleUserActivity)
-        window.addEventListener('scroll', handleUserActivity)
-        window.addEventListener('keydown', handleUserActivity)
+        // Event listeners for user activity
+        const events = ['mousemove', 'scroll', 'keydown'] as const
+        events.forEach(event => {
+            window.addEventListener(event, handleUserActivity)
+        })
 
-        // set timer awal
+        // Set initial timer
         idleTimer = setTimeout(() => setIsActive(false), IDLE_TIMEOUT)
 
-        // clean up
+        // Clean up
         return () => {
             clearTimeout(idleTimer)
-            window.removeEventListener('mousemove', handleUserActivity)
-            window.removeEventListener('scroll', handleUserActivity)
-            window.removeEventListener('keydown', handleUserActivity)
+            events.forEach(event => {
+                window.removeEventListener(event, handleUserActivity)
+            })
         }
-
     }, [checkOnlineStatus])
+
+    // Early return for login page
+    if (isLogin) return null
 
     return (
         <nav className="bg-white shadow p-4 flex justify-between items-center fixed top-0 w-screen">
             <h1 className="text-xl font-bold">Hooks Practice</h1>
+
             <div className="flex items-center gap-2">
-                <span className={`px-3 py-1 rounded-full
-                    text-sm font-medium ${isOnline ? 'text-green-500 font-bold' : 'text-red-500 font-bold'}`}>
+                <span className={`px-3 py-1 rounded-full text-sm font-medium ${isOnline ? 'text-green-500 font-bold' : 'text-red-500 font-bold'
+                    }`}>
                     {isOnline ? 'Online' : 'Offline'}
                 </span>
+
+                <span className="text-slate-500 font-semibold">
+                    Hello, {emailFromCookie?.split('@')[0]}
+                </span>
+
                 <button
-                    onClick={checkOnlineStatus}
-                    className="bg-gray-200 px-2 py-1 rounded text-sm hover:bg-gray-300">
-                    Refresh Status
+                    onClick={logout}
+                    className="bg-gray-200 px-2 py-1 rounded text-sm hover:bg-gray-300"
+                >
+                    Logout
                 </button>
             </div>
         </nav>
