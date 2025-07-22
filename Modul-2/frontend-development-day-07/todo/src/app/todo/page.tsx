@@ -1,5 +1,6 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import React, { useState, useMemo } from "react"
 import { useTodos } from "@/helpers/useTodos"
 
 import { Todo } from "@/utils/interface"
@@ -7,13 +8,82 @@ import TodoItem from "@/components/TodoItem"
 
 export default function TodoList() {
 
-    const { todos, loading } = useTodos()
+
+    const router = useRouter()
+    const searchParams = useSearchParams() // untuk mengambil params di URL
+    const searchQuery = searchParams.get('search') || '' // untuk mengambil query di URL
+
     const [title, setTitle] = useState<string>("")
     const [editing, setEditing] = useState<Todo | null>(null)
+    const [search, setSearch] = useState<string>(searchQuery)
+    const [filter, setFilter] = useState<'all' | 'completed' | 'pending'>('all')
+    const [sorting, setSorting] = useState<'asc' | 'desc'>('desc')
+
+    const { todos, loading } = useTodos(searchQuery)
+
+    // fungsi untuk melakukan filtering data
+    const filteredTodos = useMemo(() => {
+        let data = [...todos]
+
+        if (filter === 'completed') {
+            data = data.filter((item) => item.completed)
+        } else if (filter === 'pending') {
+            data = data.filter((item) => !item.completed)
+        }
+
+        return data.sort((a, b) => {
+            const aTime = new Date(a.created ?? 0).getTime();
+            const bTime = new Date(b.created ?? 0).getTime();
+            return sorting === 'asc' ? aTime - bTime : bTime - aTime;
+        })
+    }, [todos, filter, sorting])
+
+    // fungsi untuk melakukan search data
+    function handleSearch(e: React.FormEvent) {
+        e.preventDefault() // untuk mencegah rendering ketika handleSearch ditrigger
+        if (search.trim() === '') {
+            router.push('/todo')
+        } else {
+            router.push(`/todo?search=${encodeURIComponent(search)}`)
+        }
+    }
 
     return (
         <main className="max-w-2xl mx-auto py-10 px-4">
             <h1 className="text-2xl font-bold mb-6 text-center">Tidy Task</h1>
+
+            {/* fitur untuk melakukan searching */}
+            <form onSubmit={handleSearch} className="flex gap-2 mb-4">
+                <input
+                    type="text"
+                    placeholder="Search todos..."
+                    value={search}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                />
+                <button
+                    className="bg-gray-700 text-white px-4 py-2 rounded-md"
+                    type="submit"
+                >Search</button>
+            </form>
+
+            {/* fitur untuk melakukan filtering */}
+            <div className="flex justify-between mb-4">
+                <select
+                    value={filter}
+                    className="border p-2 rounded-md"
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setFilter(e.target.value as 'all' | 'completed' | 'pending')}
+                >
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Not Completed</option>
+                </select>
+                <button
+                    onClick={() => setSorting((prev) => (prev === 'asc' ? 'desc' : 'asc'))}
+                    className="border px-4 py-2 rounded-md"
+                >Sort by Date : {sorting.toUpperCase()}</button>
+            </div>
+
             <table className="w-full border border-gray-200">
                 <thead className="bg-gray-100 text-sm text-gray-600">
                     <tr>
@@ -23,7 +93,7 @@ export default function TodoList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {todos.map((todo: Todo) => {
+                    {filteredTodos.map((todo: Todo) => {
                         return (
                             <TodoItem
                                 key={todo.objectId}
