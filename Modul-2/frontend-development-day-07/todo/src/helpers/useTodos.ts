@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { api } from "@/utils/api/api"
 import { Todo } from "@/utils/interface"
 
@@ -10,7 +10,7 @@ export function useTodos() {
     async function fetchTodos() {
         try {
             setLoading(true)
-            const response = await api.get<Todo[]>('/')
+            const response = await api.get<Todo[]>('/todo')
             setTodos(response.data)
             setLoading(false)
         } catch (error) {
@@ -18,9 +18,13 @@ export function useTodos() {
         }
     }
 
+    useEffect(() => {
+        fetchTodos()
+    }, [])
+
+
     return {
         todos,
-        loading,
-        fetchTodos
+        loading
     }
 }
