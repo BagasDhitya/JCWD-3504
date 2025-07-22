@@ -5,3 +5,8 @@ export interface Todo {
     created?: string,
     updated?: string,
 }
+
+export interface User {
+    email: string,
+    password?: string
+}

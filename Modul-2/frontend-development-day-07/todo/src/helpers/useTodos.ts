@@ -24,13 +24,37 @@ export function useTodos(query?: string) {
         }
     }
 
+    async function createTodo(title: string) {
+        try {
+            const response = await api.post('/todo', { title: title, completed: false }) // ketika melakukan POST, sertakan body request
+            setTodos((prev) => [...prev, response.data])
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function updateTodo(id: string, data: Partial<Todo>) {
+        try {
+            const response = await api.put(`/todo/${id}`, data) // body request untuk PUT atau edit todo
+            setTodos((prev) => prev.map((todo) => (todo.objectId === id ? response.data : todo)))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function deleteTodo(id: string) {
+        try {
+            await api.delete(`/todo/${id}`)
+            setTodos((prev) => prev.filter((todo) => todo.objectId !== id))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         fetchTodos()
     }, [])
 
 
-    return {
-        todos,
-        loading
-    }
+    return { todos, loading, createTodo, updateTodo, deleteTodo }
 }

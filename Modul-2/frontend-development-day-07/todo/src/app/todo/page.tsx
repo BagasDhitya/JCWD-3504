@@ -1,14 +1,18 @@
 'use client'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { toFormikValidate, toFormikValidationSchema } from 'zod-formik-adapter'
 import { useRouter, useSearchParams } from "next/navigation"
 import React, { useState, useMemo } from "react"
-import { useTodos } from "@/helpers/useTodos"
 
-import { Todo } from "@/utils/interface"
 import TodoItem from "@/components/TodoItem"
 
+import { useTodos } from "@/helpers/useTodos"
+
+import { todoSchema } from "@/utils/validation/todo.schema"
+
+import { Todo } from "@/utils/interface"
+
 export default function TodoList() {
-
-
     const router = useRouter()
     const searchParams = useSearchParams() // untuk mengambil params di URL
     const searchQuery = searchParams.get('search') || '' // untuk mengambil query di URL
@@ -19,7 +23,7 @@ export default function TodoList() {
     const [filter, setFilter] = useState<'all' | 'completed' | 'pending'>('all')
     const [sorting, setSorting] = useState<'asc' | 'desc'>('desc')
 
-    const { todos, loading } = useTodos(searchQuery)
+    const { todos, loading, createTodo, updateTodo, deleteTodo } = useTodos(searchQuery)
 
     // fungsi untuk melakukan filtering data
     const filteredTodos = useMemo(() => {
@@ -52,6 +56,42 @@ export default function TodoList() {
         <main className="max-w-2xl mx-auto py-10 px-4">
             <h1 className="text-2xl font-bold mb-6 text-center">Tidy Task</h1>
 
+            {/* form untuk todo */}
+            <Formik
+                initialValues={{ title: editing?.title || '' }}
+                validationSchema={toFormikValidationSchema(todoSchema)}
+                enableReinitialize={true}
+                onSubmit={(values, { resetForm }) => {
+                    if (editing) {
+                        updateTodo(editing.objectId, { title: values.title })
+                    } else {
+                        createTodo(values.title)
+                    }
+                    resetForm()
+                }}
+            >
+                <Form className='flex gap-2 mb-4 items-start flex-col sm:flex-row'>
+                    <div className='w-full'>
+                        <Field
+                            name="title"
+                            type="text"
+                            placeholder="Enter todo ..."
+                            className="w-full p-2 border border-gray-300 rounded-md"
+                        />
+                        <ErrorMessage
+                            name='title'
+                            component='div'
+                            className='text-red-500 text-sm mt-1'
+                        />
+                    </div>
+                    <button
+                        type='submit'
+                        className='bg-blue-600 text-white px-4 py-2 rounded-md w-full sm:w-auto'>
+                        {editing ? 'Update' : 'Add'}
+                    </button>
+                </Form>
+            </Formik>
+
             {/* fitur untuk melakukan searching */}
             <form onSubmit={handleSearch} className="flex gap-2 mb-4">
                 <input
@@ -78,6 +118,8 @@ export default function TodoList() {
                     <option value="completed">Completed</option>
                     <option value="pending">Not Completed</option>
                 </select>
+
+                {/* untuk melakukan sorting berdasarkan Created Date */}
                 <button
                     onClick={() => setSorting((prev) => (prev === 'asc' ? 'desc' : 'asc'))}
                     className="border px-4 py-2 rounded-md"
@@ -93,8 +135,8 @@ export default function TodoList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredTodos.map((todo: Todo) => {
-                        return (
+                    {filteredTodos?.length > 0 ? (
+                        filteredTodos.map((todo: Todo) => (
                             <TodoItem
                                 key={todo.objectId}
                                 todo={todo}
@@ -102,10 +144,16 @@ export default function TodoList() {
                                     setTitle(edit.title)
                                     setEditing(edit)
                                 }}
-                                onDelete={() => alert('Under development!')}
+                                onDelete={() => deleteTodo(todo.objectId)}
                             />
-                        )
-                    })}
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={3} className="p-2 text-center text-gray-500">
+                                No todos found
+                            </td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </main>
