@@ -1,0 +1,122 @@
+[
+  {
+    "id_employee": "EMP001",
+    "name": "John Doe",
+    "division": "Marketing",
+    "role": "Manager"
+  },
+  {
+    "id_employee": "EMP002",
+    "name": "Jane Smith",
+    "division": "Human Resources",
+    "role": "HR Specialist"
+  },
+  {
+    "id_employee": "EMP003",
+    "name": "Michael Johnson",
+    "division": "IT",
+    "role": "Software Developer"
+  },
+  {
+    "id_employee": "EMP004",
+    "name": "Emily Davis",
+    "division": "Finance",
+    "role": "Accountant"
+  },
+  {
+    "id_employee": "EMP005",
+    "name": "Robert Brown",
+    "division": "Operations",
+    "role": "Operations Manager"
+  },
+  {
+    "id_employee": "EMP006",
+    "name": "Sarah Wilson",
+    "division": "Sales",
+    "role": "Sales Representative"
+  },
+  {
+    "id_employee": "EMP007",
+    "name": "David Taylor",
+    "division": "IT",
+    "role": "System Administrator"
+  },
+  {
+    "id_employee": "EMP008",
+    "name": "Jessica Martinez",
+    "division": "Customer Service",
+    "role": "Customer Support"
+  },
+  {
+    "id_employee": "EMP009",
+    "name": "James Anderson",
+    "division": "Marketing",
+    "role": "Content Creator"
+  },
+  {
+    "id_employee": "EMP010",
+    "name": "Lisa Thomas",
+    "division": "Finance",
+    "role": "Financial Analyst"
+  },
+  {
+    "id_employee": "EMP011",
+    "name": "Daniel White",
+    "division": "Operations",
+    "role": "Logistics Coordinator"
+  },
+  {
+    "id_employee": "EMP012",
+    "name": "Amanda Harris",
+    "division": "Human Resources",
+    "role": "Recruiter"
+  },
+  {
+    "id_employee": "EMP013",
+    "name": "Christopher Clark",
+    "division": "IT",
+    "role": "Database Administrator"
+  },
+  {
+    "id_employee": "EMP014",
+    "name": "Nicole Lewis",
+    "division": "Sales",
+    "role": "Sales Manager"
+  },
+  {
+    "id_employee": "EMP015",
+    "name": "Matthew Robinson",
+    "division": "Marketing",
+    "role": "Digital Marketer"
+  },
+  {
+    "id_employee": "EMP016",
+    "name": "Elizabeth Walker",
+    "division": "Customer Service",
+    "role": "Team Lead"
+  },
+  {
+    "id_employee": "EMP017",
+    "name": "Andrew Hall",
+    "division": "Finance",
+    "role": "Auditor"
+  },
+  {
+    "id_employee": "EMP018",
+    "name": "Megan Allen",
+    "division": "Operations",
+    "role": "Inventory Manager"
+  },
+  {
+    "id_employee": "EMP019",
+    "name": "Kevin Young",
+    "division": "IT",
+    "role": "Network Engineer"
+  },
+  {
+    "id_employee": "EMP020",
+    "name": "Rachel King",
+    "division": "Human Resources",
+    "role": "HR Manager"
+  }
+]
