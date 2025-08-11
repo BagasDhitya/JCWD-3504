@@ -1,9 +1,13 @@
 import express, { Application } from 'express'
 import employeeRouter from './routers/employee.router'
+import cors from 'cors'
 
 const app: Application = express()
 const PORT: number = 8000
 
+app.use(cors({
+    origin: 'http://localhost:3000'
+}))
 app.use(express.json()) // middleware untuk membaca data json dari body request di controller
 app.set('trust proxy', true) // untuk memunculkan ip address
 app.use('/api/v1', employeeRouter)
