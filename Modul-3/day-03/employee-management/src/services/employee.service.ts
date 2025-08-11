@@ -18,23 +18,23 @@ export class EmployeeService {
         let counter: number = 1
         // filter berdasarkan role
         if (role) {
-            query += `AND role = $${counter++}`
+            query += ` AND role = $${counter++}`
             values.push(role)
         }
         // filter berdasarkan division
         if (department) {
-            query += `AND department = $${counter++}`
+            query += ` AND department = $${counter++}`
             values.push(department)
         }
         // searching berdasarkan nama employee
         if (search) {
-            query += `AND (name ILIKE $${counter++} OR role ILIKE $${counter++} OR department ILIKE $${counter++})`
+            query += ` AND (name ILIKE $${counter++} OR role ILIKE $${counter++} OR department ILIKE $${counter++})`
             values.push(`%${search}%`, `%${search}%`, `%${search}%`)
         }
 
         // fitur pagination
         const offset = (page - 1) * limit
-        query += `ORDER BY name ${sort?.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'} LIMIT $${counter++} OFFSET $${counter++}`
+        query += ` ORDER BY name ${sort?.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'} LIMIT $${counter++} OFFSET $${counter++}`
         values.push(limit, offset)
 
         const result = await pool.query(query, values)
