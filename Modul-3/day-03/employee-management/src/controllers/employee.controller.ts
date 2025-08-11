@@ -33,8 +33,16 @@ export class EmployeeController {
 
     public async getAll(req: Request, res: Response): Promise<void> {
         try {
-            const result = await this.employeeService.getAll()
-            handleSuccess(res, result, 'Successfully get data of employees')
+            const { page = 1, limit = 10, role, department, sort = 'ASC', search } = req.query
+            const result = await this.employeeService.getAll({
+                page: Number(page),
+                limit: Number(limit),
+                role: role as string,
+                department: department as string,
+                sort: sort as string,
+                search: search as string
+            })
+            handleSuccess(res, result, 'Successfully get all employees')
         } catch (error) {
             handleError(res, error)
         }
