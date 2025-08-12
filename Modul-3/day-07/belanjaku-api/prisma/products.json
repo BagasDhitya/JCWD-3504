@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Classic Leather Backpack",
+    "description": "Durable leather backpack with spacious compartments, perfect for daily use or travel.",
+    "stock": 25,
+    "image": "https://images.unsplash.com/photo-1593032465171-d08e924ff1f4",
+    "price": 89.99
+  },
+  {
+    "title": "Wireless Noise-Cancelling Headphones",
+    "description": "Premium headphones with superior sound quality and active noise cancellation feature.",
+    "stock": 40,
+    "image": "https://images.unsplash.com/photo-1511367461989-f85a21fda167",
+    "price": 199.99
+  },
+  {
+    "title": "Minimalist Wristwatch",
+    "description": "Elegant analog wristwatch with a sleek design for formal and casual occasions.",
+    "stock": 30,
+    "image": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde",
+    "price": 129.5
+  },
+  {
+    "title": "Ergonomic Office Chair",
+    "description": "Comfortable office chair with adjustable height and lumbar support for long working hours.",
+    "stock": 12,
+    "image": "https://images.unsplash.com/photo-1598300056393-4f613da4e2d9",
+    "price": 249.0
+  },
+  {
+    "title": "Ceramic Coffee Mug Set",
+    "description": "Set of 4 premium ceramic mugs with a modern matte finish, perfect for hot beverages.",
+    "stock": 60,
+    "image": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5",
+    "price": 34.75
+  }
+]
