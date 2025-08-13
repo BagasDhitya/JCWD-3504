@@ -6,11 +6,11 @@ export class ProductService {
         return prisma.product.create({ data })
     }
 
-    public async getAll() {
+    public getAll() {
         return prisma.product.findMany()
     }
 
-    public async getById(id: number) {
+    public getById(id: number) {
         return prisma.product.findUnique({
             where: {
                 id_product: id
