@@ -34,9 +34,15 @@ model Transaction {
 }
 
 model User {
-  id_user  Int    @id @default(autoincrement())
-  email    String @unique
+  id_user  Int      @id @default(autoincrement())
+  email    String   @unique
   password String
+  role     UserRole @default(USER)
 
   Transaction Transaction[]
+}
+
+enum UserRole {
+  USER
+  ADMIN
 }

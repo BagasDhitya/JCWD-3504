@@ -12,13 +12,24 @@ export class UserController {
         this.userService = new UserService()
         this.create = this.create.bind(this)
         this.getAll = this.getAll.bind(this)
+        this.login = this.login.bind(this)
+    }
+
+    public async login(req: Request, res: Response) {
+        try {
+            const { email, password }: UserDTO = req.body
+            const result = await this.userService.login({ email, password })
+            handleSuccess(res, 'Success login', result)
+        } catch (error) {
+            handleError(res, 'Failed login', 500, (error as Error).message)
+        }
     }
 
     public async create(req: Request, res: Response) {
         try {
-            const { email, password }: UserDTO = req.body
+            const { email, password, role }: UserDTO = req.body
             const result = await this.userService.create({
-                email, password
+                email, password, role
             })
             handleSuccess(res, 'Success create user', result)
         } catch (error) {
